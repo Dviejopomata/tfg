@@ -66,6 +66,12 @@ for i in range(1, 100):
     result=add.apply_async((i, i), )
     print(i, result.get())
 ```
+Monitor de celery flower
+```console
+$ pip install flower
+```
+
+
 
 ## Flutter
 
