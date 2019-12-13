@@ -36,6 +36,15 @@ Forms
 Api
 
 ## Celery
+Instalación
+```console
+pip install celery
+```
+Si estamos en windows
+```console
+pip install eventlet
+```
+
 ```python
 from celery import Celery
 app = Celery('tasks',

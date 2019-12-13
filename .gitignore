@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+*.log
+*.pot
+__pycache__/
+local_settings.py
