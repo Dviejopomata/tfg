@@ -92,5 +92,5 @@ Creación de una aplicación
 
 Integración continua (git, pull request)
 
-Continuous delivery
+Continuous delivery.
 
