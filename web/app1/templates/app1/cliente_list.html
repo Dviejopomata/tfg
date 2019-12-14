@@ -1,0 +1,11 @@
+<h1>Clientes</h1>
+<ul>
+{% for cliente in object_list %}
+    <li>
+        <a href="{% url 'cliente_detail' cliente.id %}">Detalle</a>
+        <a href="{% url 'cliente_update' cliente.id %}">Edit</a>
+        <a href="{% url 'cliente_delete' cliente.id %}">Borrar  </a>
+         {{ cliente.identificacion }} - {{ cliente.nombre }}</li>
+{% empty %}
+    <li>No clientes yet.</li>
+{% endfor %}
