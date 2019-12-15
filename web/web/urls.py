@@ -18,8 +18,14 @@ include('blog.urls'))
 import eventlet
 eventlet.monkey_patch()
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from app1.views import EjemploTemplateView, DireccionView, ClienteCreateView, ClienteListView, ClienteUpdateView, ClienteDeleteView, ClienteDetailView
+from rest_framework import routers, serializers, viewsets
+
+from app1.viewsets import ClienteViewSet
+router = routers.DefaultRouter()
+router.register(r'clientes', ClienteViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,5 +36,6 @@ urlpatterns = [
     path('cliente/<pk>/delete', ClienteDeleteView.as_view(),name="cliente_delete"),
     path('direccion', DireccionView.as_view(), name='direccion_view'),
     path('template', EjemploTemplateView.as_view(), name='template'),
-    
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

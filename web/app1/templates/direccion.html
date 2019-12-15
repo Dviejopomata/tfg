@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <form  method="post"  enctype="multipart/form-data">
     {% csrf_token %}
     <table>
@@ -5,3 +7,10 @@
     </table>
     <p><input type="submit" value="Save"></p>
 </form>
+{{'esto saldra en mayusculas por el filtro' | upper}}
+{% if descuento > 0 %} Descuento Aplicado {% endif %}
+{% for key, value in request.headers.items %}
+    <p>{{key}}:{{ value }}</p>
+{% endfor %}
+{% include 'general.html' with nombre='JUAN'%}
+{% endblock%}

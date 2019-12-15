@@ -32,8 +32,14 @@ Capa de Negocio
 Vistas
 
 Forms
+### Api
+Para instalar el djangorestframework
+```console
+pip install djangorestframework
+pip install markdown
+pip install django-filter
+```
 
-Api
 
 ## Celery
 Instalación
